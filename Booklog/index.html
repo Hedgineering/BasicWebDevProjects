@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="book.ico" type="image/x-icon">
+    <title>Booklogger</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- The current state-of-the-art is to put scripts in the <head> tag and use the async or defer attributes. This allows your scripts to be downloaded asap without blocking your browser. -->
+    <!-- https://stackoverflow.com/questions/436411/where-should-i-put-script-tags-in-html-markup -->
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main>
+        <section class="search-section">
+            <div class="container">
+                <h1 class="app-title">Booklogger</h1>
+                <p class="subtitle">Reading List and Tracker</p>
+                <input type="search" name="searchBook" id="book-search-input" placeholder="Search books..." aria-placeholder="Search books...">
+            </div>
+        </section>
+        <section class="list-section">
+            <div class="container">
+                <h2 class="list-title">Books to Read</h2>
+                <ul id="book-items-list">
+                    <li class="book-item">
+                        <p class="book-name">Name of the Wind</p>
+                        <button class="btn btn-delete">delete</button>
+                    </li>
+                    <li class="book-item">
+                        <p class="book-name">The Wise Man's Fear</p>
+                        <button class="btn btn-delete">delete</button>
+                    </li>
+                    <li class="book-item">
+                        <p class="book-name">Kafka on the Shore</p>
+                        <button class="btn btn-delete">delete</button>
+                    </li>
+                    <li class="book-item">
+                        <p class="book-name">The Master and the Margarita</p>
+                        <button class="btn btn-delete">delete</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="add-section">
+            <div class="add-container">
+                <input type="text" name="addBook" id="add-book-input" placeholder="Add a book..." aria-placeholder="Add a book...">
+                <button class="btn btn-add-book" aria-roledescription="button to submit the book you'd like to add to the list">Add</button>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

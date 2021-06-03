@@ -1,0 +1,56 @@
+html {
+    margin: none;
+    padding: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1, h2, p {
+    margin-top: none;
+}
+
+h1 {
+    color: #2e7ad3;
+    text-align: center;
+    font-size: 48px;
+}
+
+h2 {
+    color: #104C90;
+    font-size: 32px;
+    
+}
+
+.container{
+    background-color: #f1f1f1;
+    padding: 25px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.img-container {
+    background-color: pink;
+    height: 150px;
+    overflow: hidden;
+}
+
+a {
+    font-weight: bold;
+}
+
+a:link, a:visited {
+    color: #ff8000;
+}
+a:hover, a:focus {
+    color: firebrick;
+}
+
+img {
+    object-fit: fill;
+    position: relative;
+    bottom: 66%;
+}

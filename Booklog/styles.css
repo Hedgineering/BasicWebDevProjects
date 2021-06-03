@@ -1,0 +1,171 @@
+/* 
+    ===============
+    General
+    ===============
+*/
+
+/* ======= Variables ======= */
+:root {
+    --primary: white;
+    --secondary: rgb(230, 230, 230);
+    --accent: hsl(300, 24%, 42%);
+    --light-accent: hsl(300, 24%, 62%);
+}
+
+/* ======= Scrollbar ======= */
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-track {
+    background-color: none;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--light-accent);
+}
+html,body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--light-accent) var(--primary);
+}
+
+/* ======= Common ======= */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+    margin: 0 auto;
+    /* background-color: #888; */
+    width: 90%;
+    min-width: 300px;
+    max-width: 1000px;
+    /* padding: 2em; */
+    box-shadow: 0 0 3px -2px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+img {
+    display: block;
+}
+.btn,
+.btn:link,
+.btn:active {
+    background-color: var(--accent);
+    border: none;
+    color: var(--primary);
+    border-radius: 5px;
+    padding: 0.5em 1em;
+}
+.btn:hover,
+.btn:focus {
+    background-color: var(--light-accent);
+}
+
+/* 
+===============
+Type
+===============
+*/
+.app-title {
+    margin-bottom: 0;
+}
+
+/* 
+===============
+Layout
+===============
+*/
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* ======= Search Section ======= */
+.search-section {
+    background-color: var(--secondary);
+    padding: 1em;
+}
+
+.search-section .container{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+}
+
+#book-search-input {
+    border: none;
+    border-radius: 1em;
+    padding: 1em;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* ======= List Section ======= */
+.list-section {
+    padding: 1em;
+}
+.list-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--light-accent) var(--secondary);
+    /* background-color: yellow; */
+}
+.list-section li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+    padding-left: 1em;
+    border-left: 3px solid var(--secondary);
+    text-transform: capitalize;
+    /* border: 1px solid magenta; */
+}
+
+.list-section li:hover {
+    border-left: 3px solid var(--accent);
+}
+.btn-delete {
+    align-self: center;
+    margin: 0 0.75em;
+    /* background-color: chartreuse; */
+}
+
+/* ======= Add Section ======= */
+.add-section {
+    padding: 2em;
+}
+.add-container {
+    /* background-color: pink; */
+    width: 66%;
+    min-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    height: 3em;
+    border-radius: 0.5em;
+    overflow: hidden;
+    border: 1px solid #999;
+}
+#add-book-input {
+    flex: 4;
+    border: none;
+    padding: 1em;
+}
+.btn-add-book {
+    flex: 1;
+    border-radius: 0 5px 5px 0;
+}
+
+@media screen and (max-width:500px) {
+    .add-container{
+        width: 100%;
+    }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating our own SVGs</title>
+    <style>
+        /* CSS Goes here */
+        .container {
+            margin: 10vh auto;
+            border: 5px dashed black;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            width: 80%;
+        }
+
+        svg {
+            border: 1px solid blue;
+            margin: 1rem 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+    <!-- IMPORTANT CONCEPT : viewPort vs viewBox -->
+    <!-- viewport is basically the size of the 
+            window you're looking at the svg through
+            -This is defined by the width and height -->
+    <!-- viewBox is the box represented by your viewport
+            but projected onto the plane the svg lives in
+        
+            -for example, viewBox="0 0 250 250" says
+                your viewBox will be defined such that your 
+                viewport's top left vertex starts at the 0,0
+                of the svg existence plane, and your viewport
+                spans 250 in the x and 250 in the y of the svg plane
+            
+                viewBox="0 0 500 500" says your viewport
+                starts at 0,0 of the svg plane, and spans 500 wide
+                and 500 tall. This effectively zooms out by 50%
+                since now you are looking at twice as much area
+                of the svg plane as you were looking at when the
+                view box was spanning 250 by 250.
+
+                similarly, viewBox="0 0 125 125" would effectively
+                zoom in by 50%.
+
+                in short, viewBox defines how much of the svg plane
+                is shown inside your viewPort.
+
+                by default it is the same size as your viewPort 
+                (width, height) of the svg, but when that changes,
+                the zoom along the x and y essentially changes
+            
+                learn more from kevin powell:
+                https://youtu.be/TBYJ2V1jAlA
+            -->
+
+        <svg width="250" height="250">
+            <!-- Lines must have start/end points (x1,y1) to (x2,y2) -->
+            
+            <!-- They must also have a stroke and stroke width to show -->
+            <line x1="25" y1="25" x2="175" y2="175" stroke="purple" stroke-width="15"/>
+        </svg>
+        
+        <svg width="250" height="250">
+            <!-- Rectangles must have at least start position of
+                 their top left corner, height and width to show -->
+            
+                 <!-- From there, they can have radiusX and radiusY for 
+                 how rounded their edges are -->
+            <rect rx="45" ry="75" x="25" y="25" height="200" width="200" fill="yellow" />
+        </svg>
+        
+        <svg width="250" height="250">
+            <!-- Circles have radius, centerX, and centerY -->
+            <!-- this places the circle within the svg width/height -->
+            <circle r="125" cx="125" cy="125" fill="green" opacity="0.7"/>
+            <circle r="125" cx="250" cy="250" fill="red" opacity="0.6"/>
+            <circle r="125" cx="0" cy="0" fill="blue" opacity="0.5"/>
+            <!-- 
+                fill is the background color of the shape, with none being transparent
+                stroke is the border, stroke-width being how thick it is
+                opacity -- self explanatory
+                
+            -->
+        </svg>
+
+        <svg width="250" height="250">
+            <!-- Polygons need fill, and points in format
+                 of "x1,y1 x2,y2 x3,y3 ..." and filling
+                 proceeds clockwise -->
+
+            <!-- Polygons only have straightline edges, 
+                 if you want curves, use paths -->
+            <polygon fill="darkblue" points="50,50 250,50 200,175 5,175"/>
+        </svg>
+
+        <!-- Paths are kinda complicated, use software to make them -->
+    </div>
+</body>
+</html>

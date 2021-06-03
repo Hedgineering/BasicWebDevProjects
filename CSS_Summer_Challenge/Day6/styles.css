@@ -1,0 +1,84 @@
+/* Variables */
+:root {
+    --dark-clr: #312614;
+    --accent-clr: #B7832F;
+    --medium-clr: #707070;
+    --light-clr: #FFF;
+}
+
+/* Typography */
+body {
+    font-size: 1.125rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+h1 span {
+    color: var(--accent-clr);
+}
+h2 {
+    font-size: 1.5rem;
+}
+p {
+    margin: 0;
+}
+img {
+    max-width: 980px;
+    width: 100%;
+}
+/* Layout */
+
+.container {
+    max-width: 980px;
+    width: 95%;
+    margin: 0 auto;
+}
+.cols {
+    color: var(--medium-clr);
+    display: flex;
+    margin: 1.5em 0;
+    justify-content: space-between;
+}
+.col-size1 {
+    width: 20%;
+}
+.col-size2 {
+    width: 45%;
+}
+.col-size3 {
+    width: 70%;
+}
+.col-dark {
+    background-color: var(--dark-clr);
+    color: var(--light-clr);
+    padding: 1em;
+}
+
+/* For screen sizes of 800px or less */
+@media screen and (max-width:800px){
+    .cols {
+        color: var(--medium-clr);
+        display: flex;
+        flex-direction: column;
+        margin: 1.5em 0;
+        justify-content: space-between;
+    }
+    .col-size1 {
+        width: 100%;
+    }
+    .col-size2 {
+        width: 100%;
+    }
+    .col-size3 {
+        width: 100%;
+    }
+    .col-dark {
+        background-color: var(--dark-clr);
+        color: var(--light-clr);
+        padding: 1em;
+        margin-top: 1em;
+        width: 95%;
+    }
+}

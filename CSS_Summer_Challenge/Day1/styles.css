@@ -1,0 +1,101 @@
+/* Global Settings */
+:root,::before,::after{
+    --logo-size: 8rem;
+    --social-icon-size: 30px;
+    box-sizing: border-box;
+}
+
+body {
+    margin: none;
+    padding: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: rgb(10, 10, 10);
+    color: seashell;
+}
+
+h1, h2, p {
+    margin: none;
+}
+
+/* Modifying Header Section */
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav button {
+    border: none;
+    background: none;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 800;
+    color: seashell;
+}
+
+nav a:hover {
+    color: aquamarine;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* Main Section */
+.main-section{
+    display: flex;
+    max-width: 960px;
+    margin: 0 auto;
+    background: aquamarine;
+}
+
+.sidebar {
+    display: flex;
+    padding: 0 1%;
+    min-width: 50px;
+    background: pink;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+.main-content {
+    background: firebrick;
+    padding: 0 10px;
+}
+
+/* Setting the sizes of the images and icons */
+.logo{
+    max-width: var(--logo-size);
+    max-height: var(--logo-size);
+    margin-right: auto;
+}
+
+.socials img {
+    max-width: var(--social-icon-size);
+    max-height: var(--social-icon-size);
+    margin: 0 20px;
+}
+
+.sidebar img {
+    max-width: var(--social-icon-size);
+    max-height: var(--social-icon-size);
+}
+
+footer {
+    display: flex;
+    align-items: center;
+}
+
+footer .logo {
+    max-width: calc(var(--logo-size) - 2rem);
+    max-height: calc(var(--logo-size) - 2rem);
+    margin: 0 0 0 auto;
+}
+

@@ -1,0 +1,219 @@
+:root {
+    /* Variables */
+    --black: #353535;
+    --grey: #4f4f4f;
+    --medium-grey: #737373;
+    --light-grey: #c4c4c4;
+    --orange: #f96855;
+    --content-min-width: 450px;
+    --widescreen-sidebar-width: 300px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--black);
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--grey);
+    margin: 0;
+    width: 100vw;
+    color: var(--medium-grey);
+}
+
+@media screen and (min-width:1100px) {
+    body {
+        flex-direction: row;
+    }
+    header {
+        width: var(--widescreen-sidebar-width);
+        height: 100vh;
+        position: fixed;
+    }
+}
+
+@media screen and (max-width:calc(var(--content-min-width) + 20px)) {
+    header {
+        min-width: var(--content-min-width);
+    }
+}
+
+/* 
+    ==========
+    Typography
+    ==========
+*/
+
+.logo h1 {
+    color: var(--light-grey);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.logo span {
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    /* border: 1px solid magenta; */
+    display: flex;
+}
+
+nav li {
+    margin: 1em 0;
+}
+
+nav a {
+    padding: 0.75em 1.5em 0.75em 0;
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+nav a:link,
+nav a:visited {
+    color: var(--medium-grey);
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--light-grey);
+    font-weight: 700;
+}
+
+nav a.current-page {
+    color: var(--light-grey);
+}
+
+@media screen and (min-width:1100px) {
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+
+/* 
+    ==========
+    Layout
+    ==========
+*/
+.main-content {
+    /* border: 1px solid white; */
+    width: 100%;
+    height: 80vh;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 2em;
+    min-width: var(--content-min-width);
+    width: 90%;
+    max-width: 75em;
+    /* border: 1px solid magenta; */
+    height: 100%;
+}
+
+/* This is the grid container */
+/* this will take 100% width by default */
+.portfolio {
+    display: grid;
+    border: 1px solid var(--light-grey, firebrick);
+
+    /* evenly spaces items vertically by default */
+    /* width: 100%; //is implied */
+    height: 100%;
+
+    /* Set rows and columns with
+     grid-template-rows|columns */
+    
+    /* Using repeat(#times, spacing unit) helps */
+    /* 1fr is a fraction of the remaining space */
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+
+    /* Space items apart with gap */
+    gap: 20px;
+}
+
+.portfolio-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--orange);
+}
+
+/* is a medium item (not nested) */
+.portfolio-item.medium {
+    /* 
+        You can change the amount of rows and cols 
+        that any given item spans using 
+        grid-row: span span-amount#
+        and
+        grid-column: span span-amount#
+    */
+
+    /* 
+        You can also tell it at which starting 
+        row or col you want this item 
+        to be placed by prefixing like so
+
+        grid-col: start# / span span-amount#
+
+        for example
+
+        grid-col: 3 / span 2;
+
+        would start at the 3rd column from the left
+        and span 2 columns wide.
+
+        OR
+
+        grid-row: start# / end#
+
+        for example
+
+        grid-row: 4 / 6; 
+
+        would start at row 4 and span until row 6
+    */
+
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.portfolio-item.large {
+    grid-row: span 3;
+    grid-column: span 3;
+}
+
+.portfolio-item.tall {
+    /* more rows = taller */
+    grid-row: span 3;
+    grid-column: span 2;
+}
+
+.portfolio-item.wide {
+    /* more cols = wider */
+    grid-row: span 2;
+    grid-column: span 3;
+}
+
+@media screen and (min-width:1100px) {
+    .main-content {
+        margin: 5em 0 0 var(--widescreen-sidebar-width);
+    }
+    .nav-container {
+        min-width: 0;
+        width: var(--widescreen-sidebar-width);
+        /* border: 5px solid greenyellow; */
+    }
+}
