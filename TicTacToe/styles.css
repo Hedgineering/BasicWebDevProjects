@@ -1,0 +1,161 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size) * 0.9);
+}
+
+body {
+    margin: 0;
+}
+
+.board {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Erasing outside borders */
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:nth-child(3n + 3) {
+    border-right: none;
+}
+
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+    border-bottom: none;
+}
+
+/* ===================== */
+/* 
+    We'll use a class of 'x' or 'o' on the board
+    to determine whose turn it is currently,
+    so let's show a hover effect of the mark to
+    be placed
+*/
+/* ===================== */
+
+/* Creating the X */
+/* The hover only applies if the spot isn't taken! */
+.cell.x::before, 
+.cell.x::after,
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after {
+    content: "";
+    position: absolute;
+    height: var(--mark-size);
+    width: calc(var(--mark-size) * 0.12);
+    background-color: black;
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.o):hover::before {
+    transform: rotate(45deg);
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.o):hover::after {
+    transform: rotate(-45deg);
+}
+
+/* Creating the O */
+/* The hover only applies if the spot isn't taken! */
+.cell.o::before, 
+.cell.o::after,
+.board.o .cell:not(.x):not(.o):hover::before,
+.board.o .cell:not(.x):not(.o):hover::after  {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.cell.o::before,
+.board.o .cell:not(.x):not(.o):hover::before {
+    height: var(--mark-size);
+    width: var(--mark-size);
+    background-color: black;
+}
+
+.cell.o::after,
+.board.o .cell:not(.x):not(.o):hover::after {
+    height: calc(var(--mark-size) * 0.8);
+    width: calc(var(--mark-size) * 0.8);
+    background-color: white;
+}
+
+/* Rules For Both */
+.cell.x,
+.cell.o {
+    cursor: not-allowed;
+}
+
+/* The hover marks should be light grey */
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after,
+.board.o .cell:not(.x):not(.o):hover::before{
+    background-color: lightgrey;
+}
+
+/* Winning Message */
+.endgame-message.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.endgame-message {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* inset is the same as doing 
+    top, right, bottom, left: 0 */
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+}
+
+.endgame-message button {
+    font-size: 3rem;
+    padding: 0.25em 0.5em;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.endgame-message button:hover,
+.endgame-message button:focus {
+    font-size: 3rem;
+    padding: 0.25em 0.5em;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
