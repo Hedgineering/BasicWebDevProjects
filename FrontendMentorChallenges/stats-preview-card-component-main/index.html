@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Stats preview card component</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <div class="card">
+    <div class="card-container">
+      <!-- Use the mobile image by default, 
+           Otherwise use the image that would be best
+           suited to the current viewport size.
+           
+           The image is intended to be displayed at 
+           the viewport width - 1em for viewports of 
+           width less than 375px, and at 540px for 
+           viewports greater than 375px wide.
+      -->
+      <div class="card-image-container">
+        <img src="images/image-header-mobile.jpg"
+             srcset="images/image-header-mobile.jpg 654w,
+                     images/image-header-desktop.jpg 540w"
+             sizes="(max-width:375px) calc(100vw - 1em), 540px"
+             alt="Business workers diligently carrying out necessary duties." 
+             class="card-image">
+      </div>
+      <div class="card-text-container">
+        <h2 class="card-heading">Get <span class="accent-text">insights</span> that help your business grow.</h2>
+    
+        <p class="card-description">
+          Discover the benefits of data analytics and make better decisions regarding revenue, customer 
+          experience, and overall efficiency.
+        </p>
+        
+        <div class="stats">
+          <div class="stat-item">
+            <p class="stat-text">
+              <strong class="stat-data">10k+</strong> companies
+            </p>
+          </div>
+          
+          <div class="stat-item">
+            <p class="stat-text">
+              <strong class="stat-data">314</strong> templates
+            </p>
+          </div>
+          
+          <div class="stat-item">
+            <p class="stat-text">
+              <strong class="stat-data">12M+</strong> queries
+            </p>
+          </div>
+        </div> <!-- /.stats -->
+
+      </div> <!-- /.card-text-container -->
+  
+    </div> <!-- /.card-container -->
+
+  </div> <!-- /.card -->
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.youtube.com/channel/UCsxNqQaPujaLeJy2d34RYBQ">Hedgineering</a>.
+  </div>
+</body>
+</html>
