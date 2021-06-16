@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="faq-accordion-bg">
+    <div class="faq-card">
+      <div class="faq-artwork-container">
+        <img src="./images/illustration-box-desktop.svg" alt="box with @ symbol on top" class="at-box">
+        <div class="hide-overflow-art">
+          <img src="./images/illustration-woman-online-desktop.svg"
+               alt="illustration of a woman working on a computer" 
+               srcset="./images/illustration-woman-online-desktop.svg 1440w,
+                       ./images/illustration-woman-online-mobile.svg 375w"
+               class="woman-design">
+          <img src="./images/bg-pattern-desktop.svg"
+               srcset="./images/bg-pattern-desktop.svg 1440w,
+                       ./images/bg-pattern-mobile.svg 375w"
+               alt="drop shadow background pattern" 
+               class="drop-shadow">
+        </div>
+      </div>
+      <div id="faq-info-container">
+
+        <h2 class="faq-title">FAQ</h2>
+
+        <!-- Q1 -->
+        <div class="faq-item closed">
+
+          <div class="faq-question-container">
+            <p class="faq-question">How many team members can I invite?</p>
+            <button class="faq-dropdown-btn btn" aria-label="dropdown button for faq question">
+              <img class="arrow down" src="./images/icon-arrow-down.svg" alt="arrow icon to toggle the faq accordion">
+            </button>
+          </div>
+
+          <div class="faq-answer-container">
+            <p class="faq-answer">
+              You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.
+            </p>
+          </div>
+        </div> <!-- /.faq-item -->
+
+        <!-- Q2 -->
+        <div class="faq-item closed">
+
+          <div class="faq-question-container">
+            <p class="faq-question">What is the maximum file upload size?</p>
+            <button class="faq-dropdown-btn btn" aria-label="dropdown button for faq question">
+              <img class="arrow down" src="./images/icon-arrow-down.svg" alt="arrow icon to toggle the faq accordion">
+            </button>
+          </div>
+
+          <div class="faq-answer-container">
+            <p class="faq-answer">
+              No more than 2GB. All files in your account must fit your allotted storage space.
+            </p>
+          </div>
+        </div> <!-- /.faq-item -->
+
+        <!-- Q3 -->
+        <div class="faq-item closed">
+
+          <div class="faq-question-container">
+            <p class="faq-question">How do I reset my password?</p>
+            <button class="faq-dropdown-btn btn" aria-label="dropdown button for faq question">
+              <img class="arrow down" src="./images/icon-arrow-down.svg" alt="arrow icon to toggle the faq accordion">
+            </button>
+          </div>
+
+          <div class="faq-answer-container">
+            <p class="faq-answer">
+              Click “Forgot password” from the login page or “Change password” from your profile page. <br>
+              A reset link will be emailed to you.
+            </p>
+          </div>
+        </div> <!-- /.faq-item -->
+
+        <!-- Q4 -->
+        <div class="faq-item closed">
+
+          <div class="faq-question-container">
+            <p class="faq-question">Can I cancel my subscription?</p>
+            <button class="faq-dropdown-btn btn" aria-label="dropdown button for faq question">
+              <img class="arrow down" src="./images/icon-arrow-down.svg" alt="arrow icon to toggle the faq accordion">
+            </button>
+          </div>
+
+          <div class="faq-answer-container">
+            <p class="faq-answer">
+              Yes! Send us a message and we’ll process your request no questions asked.
+            </p>
+          </div>
+        </div> <!-- /.faq-item -->
+
+        <!-- Q5 -->
+        <div class="faq-item closed">
+
+          <div class="faq-question-container">
+            <p class="faq-question">Do you provide additional support?</p>
+            <button class="faq-dropdown-btn btn" aria-label="dropdown button for faq question">
+              <img class="arrow down" src="./images/icon-arrow-down.svg" alt="arrow icon to toggle the faq accordion">
+            </button>
+          </div>
+
+          <div class="faq-answer-container">
+            <p class="faq-answer">
+              Chat and email support is available 24/7. Phone lines are open during normal business hours.
+            </p>
+          </div>
+        </div> <!-- /.faq-item -->
+        
+      </div> <!-- /.faq-info-container -->
+    </div> <!-- /.faq -->
+  </div> 
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.youtube.com/channel/UCsxNqQaPujaLeJy2d34RYBQ">Hedgineering</a>.
+  </div>
+
+</body>
+</html>

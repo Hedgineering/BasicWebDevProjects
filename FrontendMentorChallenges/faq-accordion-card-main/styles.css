@@ -1,0 +1,253 @@
+:root {
+	/* 
+        ## Layout
+
+        The designs were created to the following widths:
+        */
+
+	--mobile-screen-size: 375px;
+	--desktop-screen-size: 1440px;
+
+	/* Colors */
+
+	/* Primary */
+
+	/* Text */
+	--text-main-primary: hsl(238, 29%, 16%);
+	--text-accent-primary: hsl(14, 88%, 65%);
+
+	/* Gradient Background */
+	--bg-grad-clr-1: hsl(273, 75%, 66%);
+	--bg-grad-clr-2: hsl(240, 73%, 65%);
+
+	/* Neutral */
+
+	/* Text */
+	--text-main-neutral: hsl(237, 12%, 33%);
+	--text-secondary-neutral: hsl(240, 6%, 50%);
+
+	/* Dividers */
+	--divider-clr: hsl(240, 5%, 91%);
+
+	/* Typography */
+
+	/* Body */
+	--fs-body: 12px;
+
+	/* Spacing */
+	--card-padding: 5em;
+	--card-border-radius: 1rem;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.faq-accordion-bg {
+	width: 90%;
+	max-width: calc(var(--desktop-screen-size) + 5rem);
+	min-width: calc(var(--mobile-screen-size));
+	margin: 1em auto;
+	background: linear-gradient(var(--bg-grad-clr-1), var(--bg-grad-clr-2));
+	padding: 8rem 2rem;
+}
+
+.faq-card {
+	background-color: white;
+	padding: calc(var(--card-padding) - 2em) var(--card-padding);
+	max-width: 800px;
+	margin: 0 auto;
+	border-radius: var(--card-border-radius);
+	display: flex;
+}
+
+.faq-item > * {
+	padding: 1em 0;
+	border-bottom: 2px solid var(--divider-clr);
+}
+
+#faq-info-container {
+	width: 50%;
+}
+
+.faq-question-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	/* border: 1px solid magenta; */
+}
+
+.faq-question-container:hover,
+.faq-question-container:focus {
+	color: var(--text-accent-primary);
+	cursor: pointer;
+}
+
+.faq-dropdown-btn {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.faq-answer-container {
+	transition: ease all 500ms;
+}
+
+.arrow {
+	transition: ease all 500ms;
+}
+
+/* Open FAQ Item */
+.faq-item.open .faq-question-container {
+	font-weight: 700;
+}
+
+.faq-item.open .faq-answer-container {
+	transform-origin: top;
+	transform: initial;
+	height: max-content;
+	padding: 1em 0;
+	/* display: block; */
+}
+
+.arrow.down {
+	transform: rotate(0deg);
+}
+
+/* Closed FAQ Item */
+.faq-item.closed .faq-question-container {
+	font-weight: 400;
+}
+
+.faq-item.closed .faq-answer-container {
+	transform: scaleY(0);
+	height: 0;
+	padding: 0;
+	/* display: none; */
+}
+
+.arrow.up {
+	transform: rotate(180deg);
+}
+/* Typography */
+body {
+	font-family: 'Kumbh Sans', sans-serif;
+	height: 100vh;
+}
+
+.faq-title {
+	margin: 1em 0;
+	font-weight: 700;
+}
+
+.faq-answer {
+	font-weight: 400;
+}
+
+/* Images */
+.faq-artwork-container {
+	position: relative;
+	flex-grow: 1;
+	left: calc(-1 * var(--card-padding));
+}
+.hide-overflow-art {
+	position: relative;
+	height: calc(100% + var(--card-padding) + 1em);
+	width: calc(100% + var(--card-padding) - 1em);
+	border-radius: var(--card-border-radius) 0 0 var(--card-border-radius);
+	top: calc(-1 * (var(--card-padding) - 2em));
+	overflow: hidden;
+}
+.at-box,
+.woman-design,
+.drop-shadow {
+	position: absolute;
+}
+.at-box {
+	left: -5em;
+	bottom: 3em;
+	z-index: 3;
+	width: 10em;
+}
+.woman-design {
+	width: 40ch;
+	left: -4em;
+	bottom: 4em;
+	z-index: 2;
+}
+.drop-shadow {
+	width: 90ch;
+	left: -35em;
+	bottom: -10em;
+}
+
+@media screen and (max-width: 840px) {
+	.faq-accordion-bg {
+		width: 100vw;
+		margin-top: 0;
+		padding: 12rem 1.5rem;
+	}
+	.faq-card {
+		flex-direction: column;
+		padding: 0 1em 3em;
+	}
+	.hide-overflow-art,
+	.faq-artwork-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.faq-artwork-container {
+		height: 15vh;
+		/* background-color: lawngreen; */
+		left: 0;
+	}
+	.hide-overflow-art {
+		/* background-color: lightcoral; */
+		border-radius: 0;
+		overflow: visible;
+	}
+	.at-box,
+	.woman-design,
+	.drop-shadow {
+		position: absolute;
+		bottom: unset;
+		left: unset;
+		transform: translateY(-15%);
+	}
+	.at-box {
+		width: 35%;
+		max-width: 15ch;
+		transform: translate(-85%, -55%);
+	}
+	.woman-design {
+		width: 90%;
+		max-width: 40ch;
+	}
+	.drop-shadow {
+		max-width: 40ch;
+		width: 90%;
+	}
+	.faq-title {
+		text-align: center;
+		font-size: 3em;
+		margin-bottom: 1rem;
+	}
+	#faq-info-container {
+		width: 85%;
+		margin: 0 auto;
+	}
+}
+
+/* Attribution */
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
