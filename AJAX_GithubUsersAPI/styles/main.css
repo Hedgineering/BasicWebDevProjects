@@ -1,0 +1,75 @@
+html {
+	scrollbar-base-color: transparent;
+	scroll-margin-right: 1rem;
+	scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+	width: 0.5rem;
+	margin-left: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgba(155, 155, 155, 0.178);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(82, 0, 107, 0.39);
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+main {
+	width: 50vw;
+	height: 80vh;
+	margin: 0 auto;
+	border-radius: 2rem;
+	box-shadow: 0px 0px 5px -2px;
+	padding: 3rem 5rem;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+	text-align: center;
+	letter-spacing: 0.5ch;
+	margin-bottom: 1.5em;
+}
+
+button {
+	background-color: transparent;
+	border: 1px solid purple;
+	color: purple;
+	border-radius: 1em;
+	padding: 1em 2em;
+	cursor: pointer;
+}
+
+button:hover,
+button:active {
+	background-color: hsl(300, 58%, 55%);
+	color: whitesmoke;
+}
+
+.fetch-items {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 90%;
+}
+
+#text-response {
+	border: 1px solid darkslategray;
+	width: 100%;
+	height: 50%;
+	overflow-y: scroll;
+	scrollbar-base-color: transparent;
+	scroll-margin-right: 1rem;
+	scrollbar-width: thin;
+
+	padding: 1rem;
+}
