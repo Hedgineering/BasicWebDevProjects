@@ -8,7 +8,7 @@ This is a repository where I store some of my quick little web development proje
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rahul-anant-hegde/)
 
-View My Projects Live!
+###View My Projects Live!
 
 [AJAX Using Github Api](https://hedgineering-ajax-github-api.netlify.app)
 
